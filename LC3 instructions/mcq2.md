@@ -9,6 +9,8 @@ q1. opcode for AND instruction
 
 q2. instructions and data are encoded in the same way in LC3
 
-q3. machine code x1221
+q3. convert machine code x1221 into LC3 instruction
+1 | 2 | 2 | 1
+-- | -- | -- | -- |
 
 -[MCQ2](#mcq-2)
