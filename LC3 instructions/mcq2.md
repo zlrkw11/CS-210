@@ -20,4 +20,14 @@ ADD | R1 | R0 | 1 | #1
 -- | -- | -- | -- | -- |
 ADD | DR | SR1 | mode | imm5 
 
--[MCQ2](#mcq-2)
+
+
+## questions
+
+### Q. 10
+Store results: 
+Evaluate address:
+Execute instruction: 
+Fetch operands:
+Decode instruction:
+Fetch instruction:
