@@ -13,6 +13,8 @@ q3. convert machine code x1221 into LC3 instruction
 1 | 2 | 2 | 1
 -- | -- | -- | -- |
 0001 | 0010 | 0010 | 0001
-ADD | DR | SR1 | 000 | SR2 |
+
+0001 | 001 | 000 | 1 | 00001
+ADD | DR | SR1 | mode | imm5 
 
 -[MCQ2](#mcq-2)
