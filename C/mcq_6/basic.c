@@ -17,5 +17,4 @@ void foo()
     local = 3;
     printf("foo: global %d\n", global);
     global = 2;
-    global = 10;
 }
