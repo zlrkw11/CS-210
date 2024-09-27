@@ -50,6 +50,9 @@ int main(void)
     scanf("%d", &a3);
 
     // type your code here
-
+    sortInDescend_1(a1, a2, a3);
+    printf("After calling sortInDescend_1(), a1 is %d, a2 is %d, a3 is %d\n", a1, a2, a3);
+    sortInDescend_2(&a1, &a2, &a3);
+    printf("After calling sortInDescend_2(), a1 is %d, a2 is %d, a3 is %d\n", a1, a2, a3);
     return 0;
 }
