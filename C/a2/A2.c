@@ -28,3 +28,21 @@ void make_new_name(char *new_name, char *original_name)
     strcpy(new_name, "new-");
     strcat(new_name, original_name);
 }
+
+int is_alpha(char c)
+{
+    if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+    {
+        return 1;
+    }
+    return 0;
+}
+
+int is_digit(char c)
+{
+    if ((c >= 0) || (c <= 9))
+    {
+        return 1;
+    }
+    return 0;
+}
