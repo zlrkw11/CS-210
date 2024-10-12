@@ -1,0 +1,9 @@
+hello
+world
+programming
+systems
+computer
+wristwatch
+microphone
+camera
+projector
