@@ -22,7 +22,6 @@ int main(int argc, char *argv[])
 
     if (!is_valid_password(argv[2]))
     {
-        printf("Password is invalid. Exiting.\n");
         return 1;
     }
 
@@ -49,7 +48,7 @@ int is_alpha(char c)
 
 int is_digit(char c)
 {
-    if ((c >= 0) || (c <= 9))
+    if (c >= '0' && c <= '9')
     {
         return 1;
     }
