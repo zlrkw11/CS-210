@@ -46,3 +46,51 @@ int is_digit(char c)
     }
     return 0;
 }
+
+int is_valid_password(char *password)
+{
+    int length = strlen(password);
+    int has_alpha = 0;
+    int has_digit = 0;
+
+    printf("Password length = %d\n", length);
+
+    if (length < 8)
+    {
+        printf("The password needs to have at least 8 characters.\n");
+    }
+
+    for (int i = 0; i < length; i++)
+    {
+        if (is_alpha(password[i]))
+        {
+            has_alpha = 1;
+        }
+        if (is_digit(password[i]))
+        {
+            has_digit = 1;
+        }
+    }
+
+    if (!has_alpha)
+    {
+        printf("The password needs to contain at least 1 alphabetical character.\n");
+    }
+    if (!has_digit)
+    {
+        printf("The password needs to contain at least 1 digit.\n");
+    }
+
+    if (length >= 8 && has_alpha && has_digit)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+void perform_XOR(char *input_filename, char *output_filename, char *password)
+{
+}
