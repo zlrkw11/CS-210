@@ -20,6 +20,15 @@ int main(int argc, char *argv[])
     make_new_name(new_name, argv[1]);
     printf("New filename = %s\n", new_name);
 
+    if (!is_valid_password(argv[2]))
+    {
+        printf("Password is invalid. Exiting.\n");
+        return 1;
+    }
+
+    perform_XOR(argv[1], new_name, argv[2]);
+    print_first_five(new_name);
+
     return 0;
 }
 
@@ -93,4 +102,43 @@ int is_valid_password(char *password)
 
 void perform_XOR(char *input_filename, char *output_filename, char *password)
 {
+    FILE *input = fopen(input_filename, "rb");
+    FILE *output = fopen(output_filename, "wb");
+    if (input == NULL || output == NULL)
+    {
+        printf("Error opening files.\n");
+        return;
+    }
+    int password_length = strlen(password);
+    char buffer[password_length];
+    int bytes_read;
+
+    while ((bytes_read = fread(buffer, 1, password_length, input)))
+    {
+        for (int i = 0; i < bytes_read; i++)
+        {
+            buffer[i] ^= password[i % password_length];
+        }
+        fwrite(buffer, 1, bytes_read, output);
+    }
+    fclose(input);
+    fclose(output);
+}
+
+void print_first_five(char *filename)
+{
+    FILE *file = fopen(filename, "rb");
+    if (file == NULL)
+    {
+        printf("Error opening file.\n");
+        return;
+    }
+    for (int i = 0; i < 5; i++)
+    {
+        int byte = fgetc(file);
+        if (byte == EOF)
+            break;
+        printf("%02x\n", byte);
+    }
+    fclose(file);
 }
